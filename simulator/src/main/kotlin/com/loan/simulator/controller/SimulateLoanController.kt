@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/loan")
+@RequestMapping("/api/v1/loan")
 class SimulateLoanController(
     private val calculateLoanProposalUseCase: CalculateLoanProposalUseCase,
     private val retrieveLoanProposalUseCase: RetrieveLoanProposalUseCase

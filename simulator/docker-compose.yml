@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgresDB
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: passdb
+      SPRING_R2DBC_URL: r2dbc:postgresql://db:5432/postgresDB
+      SPRING_R2DBC_USERNAME: admin
+      SPRING_R2DBC_PASSWORD: passdb
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: postgresDB
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: passdb
+    ports:
+      - "5432:5432"

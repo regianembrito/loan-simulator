@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/tax-rate")
+@RequestMapping("/api/v1/tax-rate")
 class TaxRateController(
     private val calculateTaxRateUseCase: CalculateTaxRateUseCase
 ) {
